@@ -17,7 +17,6 @@
 
 <script>
 import axios from "axios";
-import router from "../../router.js";
 
 export default {
     name: "Create",
@@ -34,7 +33,7 @@ export default {
         store() {
             axios.post('/api/people', {name: this.name, age: this.age, job: this.job})
                 .then( res => {
-                    router.push({ name: 'person.index'})
+                    this.$router.push({ name: 'person.index'})
                 })
         }
     },

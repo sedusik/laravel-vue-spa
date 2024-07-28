@@ -29,7 +29,6 @@
 
 <script>
 import axios from "axios";
-import router from "../../router.js";
 
 export default {
     name: "Index",
@@ -53,7 +52,7 @@ export default {
         },
 
         deletePerson(id) {
-            axios.delete('/api/people/' + id)
+            axios.delete(`/api/people/${id}`)
                 .then( res => {
                     this.getPeople()
                 })
