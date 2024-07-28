@@ -10,7 +10,7 @@
             <input type="text" class="form-control" v-model="job" placeholder="job">
         </div>
         <div class="mb-3">
-            <input @click.prevent="update" type="submit" value="Update" class="btn btn-primary">
+            <input :disabled="!isDisabled" @click.prevent="update" type="submit" value="Update" class="btn btn-primary">
         </div>
     </div>
 </template>
@@ -47,6 +47,12 @@ export default {
                 .then( res => {
                     this.$router.push({ name:'person.show', params: { id: this.$route.params.id} })
                 })
+        }
+    },
+
+    computed: {
+        isDisabled() {
+            return this.name && this.age && this.job
         }
     }
 }
