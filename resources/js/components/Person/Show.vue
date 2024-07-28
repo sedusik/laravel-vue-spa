@@ -9,13 +9,12 @@
         <div>
             Job: {{ this.person.job }}
         </div>
-        <td><router-link :to="{ name: 'person.edit', params: { id: this.person.id } }">Edit</router-link></td>
+        <router-link :to="{ name: 'person.edit', params: { id: this.person.id } }">Edit</router-link>
     </div>
 </template>
 
 <script>
 import axios from "axios";
-import router from "../../router.js";
 
 export default {
     name: "Show",
